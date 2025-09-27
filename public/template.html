@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where Brands, Creators, and Stories Meet — Influencer Marketing & Talent Management</title>
+    <meta name="description" content="We connect visionary brands with creators to craft authentic campaigns. Influencer marketing, talent management & storytelling that drives results.">
+    <meta name="keywords" content="influencer marketing agency, talent management, creator partnerships, brand collaborations, content strategy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { 900: '#0F172A' },
+              coral: { 400: '#FF6B6B' },
+              secondary: '#F1F5F9'
+            },
+            fontFamily: {
+              sans: ['Inter','system-ui','sans-serif'],
+              display: ['Poppins','Inter','system-ui','sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html{scroll-behavior:smooth}
+      .hero-bg{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%)}
+    </style>
+  </head>
+  <body class="bg-white font-sans">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <img src="/images/logo.png" alt="{{LOGO}}" class="h-8 w-auto" />
+            <span class="ml-3 font-bold text-primary-900">Where Brands, Creators, and Stories Meet</span>
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#about" class="text-gray-700 hover:text-[color:var(--coral-400)]">About</a>
+            <a href="#services" class="text-gray-700 hover:text-[color:var(--coral-400)]">Services</a>
+            <a href="#approach" class="text-gray-700 hover:text-[color:var(--coral-400)]">Approach</a>
+            <a href="#case-studies" class="text-gray-700 hover:text-[color:var(--coral-400)]">Case Studies</a>
+            <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-lg text-white bg-[#FF6B6B] hover:bg-[#ff5252]">Work With Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-bg text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-5xl lg:text-6xl font-display font-extrabold leading-tight">Where Brands, Creators, and Stories Meet</h1>
+            <p class="mt-4 text-2xl text-[#FFB3B3] font-semibold">Influencer Marketing + Talent Management</p>
+            <p class="mt-6 text-xl text-gray-200">Connecting visionary brands with inspiring creators to craft stories that move audiences.</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold">Work With Us</a>
+              <button id="open-talent-modal" class="inline-flex items-center px-6 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-primary-900">Creators — Join Our Roster</button>
+            </div>
+          </div>
+          <div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="h-32 bg-white/10 rounded-lg flex items-center justify-center">Creator Content</div>
+              <div class="h-32 bg-white/10 rounded-lg flex items-center justify-center">Brand Moments</div>
+              <div class="h-32 bg-white/10 rounded-lg flex items-center justify-center">Campaign Results</div>
+              <div class="h-32 bg-white/10 rounded-lg flex items-center justify-center">Audience Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold text-primary-900">About Us</h2>
+          <p class="mt-6 max-w-3xl mx-auto text-gray-600">Born from a passion for authentic storytelling, we bridge the gap between visionary brands and inspiring creators. Our mission is to empower creators, elevate brands, and craft stories that inspire audiences worldwide.</p>
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-8 rounded-xl border border-gray-100 shadow">Authenticity</div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">Creativity</div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">Growth</div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">Integrity</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-16 px-4 sm:px-6 lg:px-8 bg-[#F1F5F9]">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold text-primary-900">What We Do</h2>
+          <div class="mt-12 grid lg:grid-cols-2 gap-8 text-left">
+            <div class="p-8 bg-white rounded-xl border border-gray-100 shadow">
+              <h3 class="text-2xl font-bold text-primary-900">Influencer Marketing</h3>
+              <p class="mt-3 text-gray-600">Strategic partnerships that connect brands with the right creators to amplify your message and reach your audience.</p>
+              <ul class="mt-6 space-y-2 list-disc pl-5 text-gray-700">
+                <li>Creator matchmaking & vetting</li>
+                <li>Campaign strategy & creative direction</li>
+                <li>Content creation & production support</li>
+                <li>Performance analytics & reporting</li>
+                <li>Multi-platform campaign management</li>
+              </ul>
+            </div>
+            <div class="p-8 bg-white rounded-xl border border-gray-100 shadow">
+              <h3 class="text-2xl font-bold text-primary-900">Talent Management</h3>
+              <p class="mt-3 text-gray-600">Comprehensive support for creators to build sustainable careers and maximize their earning potential.</p>
+              <ul class="mt-6 space-y-2 list-disc pl-5 text-gray-700">
+                <li>Personal brand development & strategy</li>
+                <li>Contract negotiations & deal structuring</li>
+                <li>Career strategy & growth planning</li>
+                <li>Legal & financial support</li>
+                <li>Revenue optimization & diversification</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold text-primary-900">Our Approach</h2>
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-semibold">Data + Creativity</h3>
+              <p class="mt-2 text-gray-600">We blend analytics with artistic vision to create campaigns that perform.</p>
+              <p class="mt-3 text-sm text-gray-500 italic">"3.5M views via audience insights and authentic storytelling."</p>
+            </div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-semibold">Long-Term Partnerships</h3>
+              <p class="mt-2 text-gray-600">We build lasting relationships that grow stronger with each campaign.</p>
+              <p class="mt-3 text-sm text-gray-500 italic">"12 months of consistent growth and loyalty."</p>
+            </div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-semibold">Audience-Centric</h3>
+              <p class="mt-2 text-gray-600">We design with audience needs and interests at heart.</p>
+              <p class="mt-3 text-sm text-gray-500 italic">"Engagement up 15% across platforms."</p>
+            </div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-semibold">Full Support</h3>
+              <p class="mt-2 text-gray-600">We handle every detail from strategy to execution.</p>
+              <p class="mt-3 text-sm text-gray-500 italic">"Setup time reduced by 60% with better quality."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-primary-900 text-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-display font-bold">For Brands</h2>
+            <p class="mt-4 text-gray-300">Amplify your brand's message with authentic creator partnerships.</p>
+            <ul class="mt-6 space-y-2 list-disc pl-5 text-gray-300">
+              <li>Vetted, high-performing creators</li>
+              <li>Strategic planning and execution</li>
+              <li>Analytics and ROI tracking</li>
+              <li>Multi-platform management</li>
+            </ul>
+            <a href="#contact" class="mt-6 inline-block px-6 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold">Book a Strategy Call</a>
+          </div>
+          <div class="rounded-2xl p-8 bg-white/10 border border-white/20 text-center">
+            <h3 class="text-2xl font-bold">Ready to Get Started?</h3>
+            <p class="mt-3 text-gray-200">Let's discuss how we can help your brand connect with the right creators.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#F1F5F9]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div class="rounded-2xl p-8 bg-white border border-gray-100 text-center">
+            <h3 class="text-2xl font-display font-bold text-primary-900">Join Our Creator Network</h3>
+            <p class="mt-3 text-gray-600">Take your content to the next level with our support.</p>
+          </div>
+          <div>
+            <h2 class="text-4xl font-display font-bold text-primary-900">For Creators</h2>
+            <p class="mt-4 text-gray-700">Turn your passion into a sustainable career.</p>
+            <a id="open-talent-modal-2" class="mt-6 inline-block px-6 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold">Apply as Talent</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="case-studies" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold text-primary-900">Case Studies</h2>
+          <div class="mt-12 grid lg:grid-cols-2 gap-8 text-left">
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-bold text-primary-900">Beauty Brand x TikTok Influencer</h3>
+              <div class="mt-4 grid grid-cols-3 text-center gap-4">
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">3.5M</div><div class="text-sm text-gray-600">Views</div></div>
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">15%</div><div class="text-sm text-gray-600">Engagement</div></div>
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">+200%</div><div class="text-sm text-gray-600">Site Traffic</div></div>
+              </div>
+              <p class="mt-6 text-gray-600">"Authentic storytelling and strategic creator selection delivered results beyond expectations."</p>
+            </div>
+            <div class="p-8 rounded-xl border border-gray-100 shadow">
+              <h3 class="text-xl font-bold text-primary-900">Lifestyle Creator Development</h3>
+              <div class="mt-4 grid grid-cols-3 text-center gap-4">
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">250%</div><div class="text-sm text-gray-600">Audience Growth</div></div>
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">5x</div><div class="text-sm text-gray-600">Revenue Increase</div></div>
+                <div><div class="text-2xl font-bold text-[#FF6B6B]">50+</div><div class="text-sm text-gray-600">Brand Deals</div></div>
+              </div>
+              <p class="mt-6 text-gray-600">"Strategic guidance and development enabled sustainable creator growth."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-primary-900 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold">Why Choose Us</h2>
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Dual Expertise</div>
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Authentic Focus</div>
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Data-Driven Insights</div>
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Creative Excellence</div>
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Global Vision</div>
+            <div class="p-6 rounded-xl border border-white/20 bg-white/5">Proven Results</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#F1F5F9]">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-display font-bold text-primary-900">The Future of Storytelling</h2>
+          <p class="mt-6 text-gray-700">We are entering a new era where creator-led campaigns, community-first approaches, and cross-platform storytelling lead the way. We bridge brands and creators to build stories that move audiences.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center">
+            <h2 class="text-4xl font-display font-bold text-primary-900">Let's Create Something Amazing</h2>
+          </div>
+          <form class="mt-12 grid lg:grid-cols-2 gap-8">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Name *</label>
+              <input type="text" required class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="Your full name">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Company</label>
+              <input type="text" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="Your company name">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Email *</label>
+              <input type="email" required class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="you@email.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Role *</label>
+              <select required class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300">
+                <option value="">Select your role</option>
+                <option>Brand</option>
+                <option>Creator</option>
+              </select>
+            </div>
+            <div class="lg:col-span-2">
+              <label class="block text-sm font-medium text-gray-700">Brief *</label>
+              <textarea rows="4" required class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Budget</label>
+              <select class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300">
+                <option value="">Select budget range</option>
+                <option>Under $10K</option>
+                <option>$10K - $25K</option>
+                <option>$25K - $50K</option>
+                <option>$50K - $100K</option>
+                <option>Over $100K</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Upload</label>
+              <input type="file" class="mt-2 w-full px-4 py-2 rounded-lg border border-gray-300">
+            </div>
+            <div class="lg:col-span-2">
+              <button class="w-full px-6 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold">Send Message</button>
+            </div>
+          </form>
+          <div class="mt-12 grid md:grid-cols-3 gap-8 text-sm text-gray-600">
+            <div><strong>Email:</strong> {{EMAIL}}</div>
+            <div><strong>Social:</strong> {{SOCIAL_HANDLES}}</div>
+            <div>
+              <form class="flex">
+                <input type="email" placeholder="Newsletter email" class="flex-1 px-4 py-2 rounded-l-lg border border-gray-300">
+                <button class="px-4 py-2 rounded-r-lg bg-[#FF6B6B] text-white">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="talent-modal" class="fixed inset-0 hidden items-center justify-center bg-black/50 p-4">
+      <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-display font-bold text-primary-900">Join Our Creator Network</h3>
+          <button id="close-talent-modal" class="text-gray-400">✕</button>
+        </div>
+        <form class="space-y-4">
+          <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded-lg border border-gray-300" required>
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-300" required>
+          <input type="text" placeholder="Platform & Handle" class="w-full px-4 py-3 rounded-lg border border-gray-300">
+          <button class="w-full px-6 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold">Apply</button>
+        </form>
+      </div>
+    </div>
+
+    <button id="sticky-cta" class="fixed bottom-6 right-6 px-5 py-3 rounded-lg bg-[#FF6B6B] text-white font-semibold shadow-lg">Work With Us</button>
+
+    <script>
+      const openButtons = [document.getElementById('open-talent-modal'), document.getElementById('open-talent-modal-2')].filter(Boolean);
+      const modal = document.getElementById('talent-modal');
+      const closeBtn = document.getElementById('close-talent-modal');
+      openButtons.forEach(btn => btn && btn.addEventListener('click', () => modal.classList.remove('hidden')));
+      closeBtn && closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+      document.getElementById('sticky-cta').addEventListener('click', () => document.getElementById('contact').scrollIntoView({behavior:'smooth'}));
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #000000;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-semibold text-black transition-all duration-200;
+    background-color: #FFEA00;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border-2 border-white/20 rounded-lg shadow-sm text-base font-semibold text-white bg-transparent hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center px-6 py-3 border-2 rounded-lg shadow-sm text-base font-semibold bg-transparent transition-all duration-200;
+    border-color: #FFEA00;
+    color: #FFEA00;
+  }
+
+  .input-primary {
+    @apply block w-full rounded-lg shadow-sm sm:text-base py-3 px-4 bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:ring-coral-400 focus:border-coral-400;
+  }
+
+  .card {
+    @apply bg-primary-900/40 backdrop-blur-sm text-white shadow-lg rounded-xl overflow-hidden border border-white/10;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #ffffff, #FFEA00);
+  }
+
+  .hero-bg {
+    background: #0b0b0b;
+  }
+}
+
+/* Marquee animation */
+.marquee {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-track {
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-33.333%); 
+  }
+}
+
+/* Enhanced hover effects */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Brand title animation */
+.brand-glow {
+  animation: brand-pulse 3s ease-in-out infinite;
+}
+
+@keyframes brand-pulse {
+  0%, 100% {
+    text-shadow: 0 0 0px rgba(255, 234, 0, 0.0), 0 0 0px rgba(255, 234, 0, 0.0);
+    transform: translateZ(0);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255, 234, 0, 0.55), 0 0 24px rgba(255, 234, 0, 0.35);
+    transform: translateZ(0) scale(1.01);
+  }
+}
+
+/* Smooth transitions for film cards */
+.film-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.film-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 234, 0, 0.15);
+}
+
+/* Gradient text effect */
+.text-gradient {
+  background: linear-gradient(135deg, #FFEA00 0%, #FFD700 50%, #FFEA00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Professional button enhancements */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFEA00 0%, #FFD700 100%);
+  box-shadow: 0 4px 15px rgba(255, 234, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 234, 0, 0.4);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Enhanced card hover effects */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 234, 0, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Professional hover states */
+.group:hover .text-gradient {
+  animation-duration: 2s;
+}
+
+/* Enhanced section backgrounds */
+.section-padding {
+  position: relative;
+}
+
+.section-padding::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 234, 0, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 234, 0, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Professional spacing and typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+/* Enhanced focus states */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #FFEA00;
+  outline-offset: 2px;
+}
+
+/* Professional shadows */
+.shadow-professional {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Professional loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 234, 0, 0.1), transparent);
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
