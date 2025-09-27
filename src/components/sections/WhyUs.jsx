@@ -168,13 +168,6 @@ export default function WhyUs() {
               />
             </div>
             
-            {/* Floating success badge */}
-            <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-[#FFEA00]/10 backdrop-blur-md border border-[#FFEA00]/20 rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-2xl">
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FFEA00] mb-1">98%</div>
-                <div className="text-xs sm:text-sm text-gray-300">Client Satisfaction</div>
-          </div>
-          </div>
           </div>
         </div>
       </div>
