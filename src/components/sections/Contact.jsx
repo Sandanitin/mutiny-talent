@@ -38,7 +38,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">Phone</label>
-                  <input id="phone" name="phone" value={formData.phone} onChange={onChange} className="input-primary" placeholder="+1 555 123 4567" />
+                  <input id="phone" name="phone" value={formData.phone} onChange={onChange} className="input-primary" placeholder="+91 7893525156" />
                 </div>
               </div>
 

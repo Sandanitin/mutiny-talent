@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "A fusion of talent, strategy and storytelling mastery",
   subtitle: "Elevate your narrative",
   email: "connect@mutinytalent.com",
-  phone: "+1 (555) 123-4567",
+  phone: "+91 7893525156",
   socials: {
     linkedin: "#",
     instagram: "#",
