@@ -246,11 +246,24 @@ a:focus-visible {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Enhanced transitions */
-* {
+/* Enhanced transitions - only for interactive elements */
+button, a, .hover\:scale-105:hover, .group:hover {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+img {
+  will-change: auto;
+}
+
+.animate-bounce, .animate-pulse, .animate-spin {
+  will-change: transform, opacity;
 }
 
 /* Professional loading states */
@@ -276,5 +289,57 @@ a:focus-visible {
   }
   100% {
     left: 100%;
+  }
+}
+
+/* Mobile Bottom Navigation Styles */
+.mobile-nav-item {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-item:hover {
+  transform: translateY(-1px);
+}
+
+.mobile-nav-item.active {
+  color: #FFEA00;
+}
+
+.mobile-nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: #FFEA00;
+  border-radius: 1px;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .mobile-nav-item {
+    min-height: 64px;
+  }
+  
+  .mobile-nav-item svg {
+    transition: all 0.2s ease;
+  }
+  
+  .mobile-nav-item:hover svg {
+    transform: scale(1.1);
+  }
+  
+  .mobile-nav-item.active svg {
+    filter: drop-shadow(0 0 8px rgba(255, 234, 0, 0.3));
+  }
+}
+
+/* Safe area for mobile devices with notches */
+@supports (padding: max(0px)) {
+  .mobile-bottom-nav {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
 }

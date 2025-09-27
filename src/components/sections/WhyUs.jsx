@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { memo } from 'react'
+import OptimizedImage from '../OptimizedImage'
 import { 
   SparklesIcon, 
   LightBulbIcon, 
@@ -12,7 +13,7 @@ import {
   TrophyIcon
 } from '@heroicons/react/24/outline'
 
-export default function WhyUs() {
+const WhyUs = memo(() => {
   const advantages = [
     {
       icon: SparklesIcon,
@@ -156,12 +157,12 @@ export default function WhyUs() {
           
           <div className="relative">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <img 
+              <OptimizedImage 
                 className="w-full h-32 sm:h-40 lg:h-48 object-contain bg-gray-900 rounded-xl sm:rounded-2xl hover:scale-105 transition-transform duration-300" 
                 src="/market/group.png" 
                 alt="Team collaboration" 
               />
-              <img 
+              <OptimizedImage 
                 className="w-full h-32 sm:h-40 lg:h-48 object-contain bg-gray-900 rounded-xl sm:rounded-2xl hover:scale-105 transition-transform duration-300" 
                 src="/market/ceo.png" 
                 alt="CEO and leadership" 
@@ -173,6 +174,8 @@ export default function WhyUs() {
       </div>
     </section>
   )
-}
+})
+
+export default WhyUs
 
 

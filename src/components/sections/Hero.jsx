@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, memo } from 'react'
 import { ArrowRightIcon, PlayIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import OptimizedImage from '../OptimizedImage'
 
 export default function Hero() {
-  const Counter = ({ end = 100, suffix = '+', duration = 1500, label = '' }) => {
+  const Counter = memo(({ end = 100, suffix = '+', duration = 1500, label = '' }) => {
     const [value, setValue] = useState(0)
     const ref = useRef(null)
     const startedRef = useRef(false)
@@ -41,7 +42,7 @@ export default function Hero() {
         <div className="text-sm text-gray-400 font-medium">{label}</div>
       </div>
     )
-  }
+  })
   
   const scrollTo = (id) => {
     const el = document.getElementById(id)
@@ -50,34 +51,10 @@ export default function Hero() {
   
   return (
     <section className="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FFEA00] rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-      </div>
-
-      {/* Throwing animation elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating strategy elements */}
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-[#FFEA00] rounded-full animate-bounce opacity-60" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-bounce opacity-50" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-5 h-5 bg-purple-500 rounded-full animate-bounce opacity-40" style={{ animationDelay: '2s', animationDuration: '3.5s' }}></div>
-        
-        {/* Throwing motion elements */}
-        <div className="absolute top-1/2 left-0 w-2 h-2 bg-[#FFEA00] rounded-full animate-ping opacity-70" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-1/2 right-0 w-2 h-2 bg-pink-500 rounded-full animate-ping opacity-60" style={{ animationDelay: '1.5s' }}></div>
-        
-        {/* Floating text elements */}
-        <div className="absolute top-1/4 right-1/4 text-[#FFEA00] text-xs font-bold opacity-30 animate-pulse" style={{ animationDelay: '2.5s' }}>
-          Strategy
-        </div>
-        <div className="absolute bottom-1/4 left-1/4 text-blue-400 text-xs font-bold opacity-30 animate-pulse" style={{ animationDelay: '3s' }}>
-          Storytelling
-        </div>
-        <div className="absolute top-1/2 left-1/2 text-purple-400 text-xs font-bold opacity-30 animate-pulse" style={{ animationDelay: '1s' }}>
-          Talent
-        </div>
+      {/* Simplified background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FFEA00] rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="container-max relative z-10">
@@ -90,7 +67,11 @@ export default function Hero() {
             </div>
 
             <div className="mb-4 sm:mb-6">
-              <img src="/logo.png" alt="MUTINY TALENT Logo" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
+              <OptimizedImage 
+                src="/logo.png" 
+                alt="MUTINY TALENT Logo" 
+                className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" 
+              />
             </div>
             
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-gray-300">
@@ -145,13 +126,13 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
               <span className="text-xs text-gray-400 font-medium">Partnerships:</span>
               <div className="flex items-center space-x-3 sm:space-x-4">
-                <div className="px-3 py-1.5 bg-blue-600/20 border border-blue-600/30 rounded-full hover:scale-110 transition-transform duration-300 animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>
+                <div className="px-3 py-1.5 bg-blue-600/20 border border-blue-600/30 rounded-full hover:scale-110 transition-transform duration-300">
                   <span className="text-xs font-semibold text-blue-400">@meta</span>
                 </div>
-                <div className="px-3 py-1.5 bg-yellow-500/20 border border-yellow-500/30 rounded-full hover:scale-110 transition-transform duration-300 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '2s' }}>
+                <div className="px-3 py-1.5 bg-yellow-500/20 border border-yellow-500/30 rounded-full hover:scale-110 transition-transform duration-300">
                   <span className="text-xs font-semibold text-yellow-400">@snapchat</span>
                 </div>
-                <div className="px-3 py-1.5 bg-red-600/20 border border-red-600/30 rounded-full hover:scale-110 transition-transform duration-300 animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>
+                <div className="px-3 py-1.5 bg-red-600/20 border border-red-600/30 rounded-full hover:scale-110 transition-transform duration-300">
                   <span className="text-xs font-semibold text-red-400">@youtube</span>
                 </div>
               </div>
@@ -162,11 +143,10 @@ export default function Hero() {
             {/* Main image with enhanced styling */}
           <div className="relative">
               <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/20 bg-gradient-to-br from-[#FFEA00]/10 to-transparent p-1">
-              <img
+              <OptimizedImage
                 src="/images/hero/influencer.jpg"
                 alt="Social media influencer with smartphone and social media icons"
-                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-contain bg-gray-900 rounded-xl sm:rounded-2xl"
-                loading="lazy"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-contain bg-gray-900 rounded-xl sm:rounded-2xl"
               />
             </div>
               
@@ -197,26 +177,26 @@ export default function Hero() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-pulse">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <SparklesIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#FFEA00]" />
               </div>
               <Counter end={5000} label="Influencer network" />
             </div>
             
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3s' }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-pulse">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <PlayIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#FFEA00]" />
               </div>
               <Counter end={500} label="Campaigns executed" />
             </div>
             
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-pulse">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-center border border-white/20 hover:border-[#FFEA00]/30 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#FFEA00]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <ArrowRightIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#FFEA00]" />
-          </div>
+              </div>
               <Counter end={50} label="Exclusive creators" />
-          </div>
+            </div>
           </div>
         </div>
       </div>

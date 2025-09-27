@@ -12,12 +12,30 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: false, // Disable sourcemaps for production
+    minify: 'esbuild', // Use esbuild for faster builds
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          icons: ['@heroicons/react'],
+          animations: ['framer-motion'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', '@heroicons/react/24/outline', '@heroicons/react/24/solid']
+  }
 })

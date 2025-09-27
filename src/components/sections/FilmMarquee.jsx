@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
+import OptimizedImage from '../OptimizedImage'
 
 const FILM_COLLABORATIONS = [
   {
@@ -43,7 +44,7 @@ const FILM_COLLABORATIONS = [
   }
 ]
 
-export default function FilmMarquee() {
+const FilmMarquee = memo(() => {
   const [isPaused, setIsPaused] = useState(false)
   
   // Create multiple sets for seamless infinite scroll
@@ -93,11 +94,10 @@ export default function FilmMarquee() {
             {items.map((film, idx) => (
               <div key={idx} className="mx-8 flex-shrink-0 group">
                 <div className="relative">
-                  <img
+                  <OptimizedImage
                     src={film.image}
                     alt={film.title}
                     className="h-32 w-48 object-contain bg-gray-900 rounded-xl ring-1 ring-white/10 group-hover:ring-2 group-hover:ring-[#FFEA00] transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#FFEA00]/20"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -116,6 +116,8 @@ export default function FilmMarquee() {
       </div>
     </section>
   )
-}
+})
+
+export default FilmMarquee
 
 

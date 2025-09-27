@@ -7,6 +7,11 @@
     <title>mutiny-talent</title>
     <meta name="description" content="We connect visionary brands with creators to craft authentic campaigns. Influencer marketing, talent management & storytelling that drives results." />
     <meta name="keywords" content="influencer marketing agency, talent management, creator partnerships, brand collaborations, content strategy" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/logo.png" as="image" type="image/png">
+    <link rel="preload" href="/images/hero/influencer.jpg" as="image" type="image/jpeg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,10 +25,17 @@
   </head>
   <body>
     <div id="root">
-      <div style="text-align: center; padding: 2rem;">
-        <h1>Loading...</h1>
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #000000;">
+        <div style="width: 32px; height: 32px; border: 2px solid #FFEA00; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
       </div>
     </div>
+    
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html> 
