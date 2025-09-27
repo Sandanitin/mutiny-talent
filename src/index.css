@@ -296,6 +296,7 @@ img {
 .mobile-nav-item {
   position: relative;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 64px;
 }
 
 .mobile-nav-item:hover {
@@ -306,16 +307,8 @@ img {
   color: #FFEA00;
 }
 
-.mobile-nav-item.active::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 2px;
-  background: #FFEA00;
-  border-radius: 1px;
+.mobile-nav-item.active svg {
+  filter: drop-shadow(0 0 8px rgba(255, 234, 0, 0.3));
 }
 
 /* Mobile-specific adjustments */

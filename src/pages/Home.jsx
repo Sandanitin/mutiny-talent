@@ -6,9 +6,6 @@ import { Footer } from '@/components/Footer'
 const FilmMarquee = lazy(() => import('@/components/sections/FilmMarquee'))
 const WhyUs = lazy(() => import('@/components/sections/WhyUs'))
 const Collaborate = lazy(() => import('@/components/sections/Collaborate'))
-const About = lazy(() => import('@/components/sections/About'))
-const Services = lazy(() => import('@/components/sections/Services'))
-const Contact = lazy(() => import('@/components/sections/Contact'))
 
 // Loading component
 const LoadingSpinner = () => (
@@ -24,14 +21,6 @@ export default function Home() {
         <section id="hero"><Hero /></section>
         
         <Suspense fallback={<LoadingSpinner />}>
-          <About />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <Services />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
           <FilmMarquee />
         </Suspense>
         
@@ -41,10 +30,6 @@ export default function Home() {
         
         <Suspense fallback={<LoadingSpinner />}>
           <Collaborate />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <Contact />
         </Suspense>
       </main>
 

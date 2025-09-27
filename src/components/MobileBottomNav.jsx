@@ -4,8 +4,7 @@ import {
   HomeIcon, 
   UserGroupIcon, 
   CogIcon, 
-  ChatBubbleLeftRightIcon,
-  Bars3Icon
+  ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline'
 import { 
   HomeIcon as HomeIconSolid, 
@@ -17,59 +16,34 @@ import {
 export default function MobileBottomNav() {
   const location = useLocation()
 
-  const scrollToSection = (sectionId) => {
-    if (location.pathname === '/') {
-      // If we're on the home page, scroll to the section
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    } else {
-      // If we're on a different page, navigate to home and then scroll
-      window.location.href = `/#${sectionId}`
-    }
-  }
-
-  const handleNavClick = (e, sectionId) => {
-    e.preventDefault()
-    scrollToSection(sectionId)
-  }
-
   const navItems = [
     {
       name: 'Home',
       href: '/',
       icon: HomeIcon,
       activeIcon: HomeIconSolid,
-      current: location.pathname === '/',
-      isLink: true
+      current: location.pathname === '/'
     },
     {
       name: 'About',
-      href: '#about',
+      href: '/about',
       icon: UserGroupIcon,
       activeIcon: UserGroupIconSolid,
-      current: location.pathname === '/' && window.location.hash === '#about',
-      isLink: false,
-      sectionId: 'about'
+      current: location.pathname === '/about'
     },
     {
       name: 'Services',
-      href: '#services',
+      href: '/services',
       icon: CogIcon,
       activeIcon: CogIconSolid,
-      current: location.pathname === '/' && window.location.hash === '#services',
-      isLink: false,
-      sectionId: 'services'
+      current: location.pathname === '/services'
     },
     {
       name: 'Contact',
-      href: '#contact',
+      href: '/contact',
       icon: ChatBubbleLeftRightIcon,
       activeIcon: ChatBubbleLeftRightIconSolid,
-      current: location.pathname === '/' && window.location.hash === '#contact',
-      isLink: false,
-      sectionId: 'contact'
+      current: location.pathname === '/contact'
     }
   ]
 
@@ -83,14 +57,21 @@ export default function MobileBottomNav() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`mobile-nav-item flex flex-col items-center justify-center space-y-1 ${
+                className={`mobile-nav-item flex flex-col items-center justify-center space-y-1 relative transition-all duration-200 ${
                   item.current 
                     ? 'active text-yellow-400' 
                     : 'text-gray-400 hover:text-white'
                 }`}
               >
-                <Icon className="h-5 w-5" />
-                <span className="text-xs font-medium">{item.name}</span>
+                <Icon className={`h-5 w-5 transition-all duration-200 ${
+                  item.current ? 'scale-110' : 'scale-100'
+                }`} />
+                <span className={`text-xs font-medium transition-all duration-200 ${
+                  item.current ? 'text-yellow-400' : 'text-gray-400'
+                }`}>{item.name}</span>
+                {item.current && (
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-yellow-400 rounded-full" />
+                )}
               </Link>
             )
           })}
